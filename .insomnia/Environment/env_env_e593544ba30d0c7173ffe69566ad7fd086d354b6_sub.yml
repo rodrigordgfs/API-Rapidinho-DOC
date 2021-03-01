@@ -1,0 +1,14 @@
+_id: env_env_e593544ba30d0c7173ffe69566ad7fd086d354b6_sub
+type: Environment
+parentId: env_e593544ba30d0c7173ffe69566ad7fd086d354b6
+modified: 1614571615055
+created: 1614571544246
+name: Swagger env
+data:
+  base_path: /
+  scheme: http
+  host: localhost:8080/api-rapidinho
+dataPropertyOrder: null
+color: null
+isPrivate: false
+metaSortKey: 1614571544246

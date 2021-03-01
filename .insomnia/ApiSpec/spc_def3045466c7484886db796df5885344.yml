@@ -1,7 +1,7 @@
 _id: spc_def3045466c7484886db796df5885344
 type: ApiSpec
 parentId: wrk_2159885f4d864ce3926ccd62e73fdde5
-modified: 1614571238668
+modified: 1614621321548
 created: 1614569531675
 fileName: API Rapidinho
 contents: |-
@@ -20,30 +20,157 @@ contents: |-
   host: "localhost:8080/api-rapidinho"
   basePath: "/"
   tags:
-  - name: "teste"
-    description: "Teste para checar se a API esta funcionando."
-  - name: "store"
-    description: "Access to Petstore orders"
-  - name: "user"
-    description: "Operations about user"
+  - name: "Health"
+  - name: "Establishment"
   schemes:
-  - "https"
   - "http"
   paths:
     /:
       get:
         tags:
-          - "teste"
+          - "Health"
         summary: "Teste para checar se a API esta funcionando."
         description: ""
         operationId: "getTestApi"
         consumes:
         - "application/json"
-        - "application/xml"
         produces:
-        - "application/xml"
         - "application/json"
         responses:
           "200":
             description: "API Funcionando normalmente"
+    /establishment:
+      post:
+        tags:
+          - "Establishment"
+        summary: "Insere um novo estabelecimento"
+        description: ""
+        operationId: "addEstablishment"
+        consumes:
+        - "application/json"
+        produces:
+        - "application/json"
+        parameters:
+        - in: "body"
+          name: "body"
+          description: "Dados do estabelecimento a ser criado."
+          required: true
+          schema:
+            $ref: "#/definitions/Establishment"
+        responses:
+          "201":
+            description: "Estabelecimento criado com sucesso!"
+          "400":
+            description: "Erro de dados!"
+      get:
+        tags:
+          - "Establishment"
+        summary: "Lista todos os estabelecimentos"
+        description: ""
+        operationId: "getAllEstablishment"
+        consumes:
+        - "application/json"
+        produces:
+        - "application/json"
+        responses:
+          "201":
+            description: "Estabelecimentos encontrados!"
+          "400":
+            description: "Erro ao buscar os estabelecimentos!"
+    /establishment/{establishmentId}:
+      get:
+        tags:
+          - "Establishment"
+        summary: "Lista o estabelecimento pelo ID"
+        description: ""
+        operationId: "getEstablishmentByID"
+        consumes:
+        - "application/json"
+        produces:
+        - "application/json"
+        parameters:
+          - name: "establishmentId"
+            in: "path"
+            description: "ID do estabelecimento"
+            required: true
+            type: "string"
+        responses:
+          "201":
+            description: "Estabelecimentos encontrados!"
+          "400":
+            description: "Erro ao buscar os estabelecimentos!"
+          "404":
+            description: "Estabelecimento não encontrado!"
+      patch:
+        tags:
+          - "Establishment"
+        summary: "Atualiza um estabelecimento"
+        description: ""
+        operationId: "updateEstablishment"
+        consumes:
+        - "application/json"
+        produces:
+        - "application/json"
+        parameters:
+        - in: "path"
+          name: "establishmentId"
+          description: "ID do estabelecimento"
+          required: true
+          type: "string"
+        - in: "body"
+          name: "body"
+          description: "Dados do estabelecimento a ser atualizado."
+          required: true
+          schema:
+            $ref: "#/definitions/Establishment"
+        responses:
+          "200":
+            description: "Estabelecimento atualizado com sucesso!"
+          "400":
+            description: "Dados inválidos"
+          "404":
+            description: "Estabelecimento não encontrado"
+      delete:
+        tags:
+          - "Establishment"
+        summary: "Deleta um estabelecimento"
+        description: ""
+        operationId: "deleteEstablishment"
+        consumes:
+        - "application/json"
+        produces:
+        - "application/json"
+        parameters:
+        - in: "path"
+          name: "establishmentId"
+          description: "ID do estabelecimento"
+          required: true
+          type: "string"
+        responses:
+          "200":
+            description: "Estabelecimento deletado com sucesso!"
+          "404":
+            description: "Estabelecimento não encontrado"
+  definitions:
+    Establishment:
+      type: "object"
+      properties:
+        establishment:
+          type: "string"
+        phone:
+          type: "string"
+        country:
+          type: "string"
+        state:
+          type: "string"
+        address:
+          type: "string"
+        city:
+          type: "string"
+        zipCode:
+          type: "string"
+        latitude:
+          type: "number"
+        longitude:
+          type: "number"
 contentType: yaml

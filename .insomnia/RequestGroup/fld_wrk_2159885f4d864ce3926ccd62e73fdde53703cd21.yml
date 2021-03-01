@@ -1,0 +1,10 @@
+_id: fld_wrk_2159885f4d864ce3926ccd62e73fdde53703cd21
+type: RequestGroup
+parentId: wrk_2159885f4d864ce3926ccd62e73fdde5
+modified: 1614571615043
+created: 1614571544236
+name: Health
+description: Teste para checar se a API esta funcionando.
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1614571544236

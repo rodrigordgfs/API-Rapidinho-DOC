@@ -1,0 +1,21 @@
+_id: getTestApi
+type: Request
+parentId: fld_wrk_2159885f4d864ce3926ccd62e73fdde53703cd21
+modified: 1614571615006
+created: 1614571544205
+url: "{{ base_url }}/"
+name: Teste para checar se a API esta funcionando.
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1614571544205
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
