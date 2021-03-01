@@ -1,0 +1,49 @@
+_id: spc_def3045466c7484886db796df5885344
+type: ApiSpec
+parentId: wrk_2159885f4d864ce3926ccd62e73fdde5
+modified: 1614571238668
+created: 1614569531675
+fileName: API Rapidinho
+contents: |-
+  # https://editor.swagger.io/ Exemplo
+  swagger: "2.0"
+  info:
+    version: 1.0.0
+    title: API Rapidinho
+    description: API para entrega de comidas
+    license:
+      name: "Apache 2.0"
+      url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+    termsOfService: "http://swagger.io/terms/"
+    contact:
+      email: "rodrigo@shinodalabs.com.br"
+  host: "localhost:8080/api-rapidinho"
+  basePath: "/"
+  tags:
+  - name: "teste"
+    description: "Teste para checar se a API esta funcionando."
+  - name: "store"
+    description: "Access to Petstore orders"
+  - name: "user"
+    description: "Operations about user"
+  schemes:
+  - "https"
+  - "http"
+  paths:
+    /:
+      get:
+        tags:
+          - "teste"
+        summary: "Teste para checar se a API esta funcionando."
+        description: ""
+        operationId: "getTestApi"
+        consumes:
+        - "application/json"
+        - "application/xml"
+        produces:
+        - "application/xml"
+        - "application/json"
+        responses:
+          "200":
+            description: "API Funcionando normalmente"
+contentType: yaml
